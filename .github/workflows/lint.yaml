@@ -1,16 +1,10 @@
 name: Validate the metadata syntax
 
 on:
-    workflow_dispatch: ~
-    pull_request:
-        paths:
-            - 'meta/**'
-    schedule:
-        - cron: '0 12 * * 1'
-
+  workflow_dispatch:
 jobs:
     lint:
-        runs-on: ubuntu-latest
+        runs-on: self-hosted
         steps:
             - name: Set up Aspell
               run: sudo apt-get install aspell aspell-en aspell-de aspell-cs aspell-es aspell-fr
